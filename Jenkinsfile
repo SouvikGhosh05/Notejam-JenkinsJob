@@ -10,10 +10,10 @@ pipeline {
         }
         stage('Sonarqube') {
             environment {
-                scannerHome = tool 'SonarQubeScanner'
+                scannerHome = tool 'SonarQubeScanner-4.6.2'
             }
             steps {
-                withSonarQubeEnv('souvik05bit') {
+                withSonarQubeEnv('SonarQubeScanner-4.6.2') {
                     sh '''
                     ${scannerHome}/bin/sonar-scanner \
                     -Dsonar.organization=souvikgh05 \
