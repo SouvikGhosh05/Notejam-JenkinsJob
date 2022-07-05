@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Sonarqube') {
             environment {
-                scannerHome = tool 'souvikgh05bit'
+                scannerHome = tool 'SonarQubeScanner'
             }
             steps {
                 withSonarQubeEnv('souvik05bit') {
