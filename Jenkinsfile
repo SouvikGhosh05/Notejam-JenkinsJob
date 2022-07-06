@@ -19,10 +19,9 @@ pipeline {
                     -Dsonar.organization=default-organization \
                     -Dsonar.projectKey=jenkins-project \
                     -Dsonar.java.binaries=build/classes/java/ \
-                    -Dsonar.python.version=3\
+                    -Dsonar.python.version=3 \
                     -Dsonar.sourceEncoding=UTF-8
                     '''
-
                 }
             }
         }
