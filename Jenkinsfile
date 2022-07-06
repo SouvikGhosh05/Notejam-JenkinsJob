@@ -20,8 +20,7 @@ pipeline {
                     -Dsonar.projectKey=jenkins-project \
                     -Dsonar.java.binaries=build/classes/java/ \
                     -Dsonar.python.version=3\
-                    -Dsonar.sourceEncoding=UTF-8 \
-                    -Dsonar.analysis.mode=
+                    -Dsonar.sourceEncoding=UTF-8
                     '''
 
                 }
