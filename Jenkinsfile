@@ -11,13 +11,14 @@ pipeline {
         stage('Sonarqube') {
             environment {
                 scannerHome = tool 'SonarQubeScanner-4.7.0'
+                SONARCLOUD_TOKEN = credentials('sonarcloud-token')
             }
             steps {
                 withSonarQubeEnv('SonarQubeScanner-4.7.0') {
                     sh '''
                     ${scannerHome}/bin/sonar-scanner \
                     -Dsonar.host.url=https://sonarcloud.io/ \
-                    -Dsonar.login=79254cacf41caea6ecf49aef546bab383e16d9e8 \
+                    -Dsonar.login=$SONARCLOUD_TOKEN \
                     -Dsonar.organization=souvikgh05 \
                     -Dsonar.projectKey=souvikgh05_notejam-mysql \
                     -Dsonar.java.binaries=build/classes/java/ \
