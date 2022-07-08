@@ -10,14 +10,14 @@ pipeline {
         }
         stage('Sonarqube') {
             environment {
-                scannerHome = tool 'SonarQubeScanner-4.6.2'
+                scannerHome = tool 'SonarCloud'
             }
             steps {
-                withSonarQubeEnv('SonarQubeScanner-4.6.2') {
+                withSonarQubeEnv('SonarQubeScanner-4.7.0') {
                     sh '''
                     ${scannerHome}/bin/sonar-scanner \
-                    -Dsonar.organization=default-organization \
-                    -Dsonar.projectKey=jenkins-project \
+                    -Dsonar.organization=souvikgh05 \
+                    -Dsonar.projectKey=souvikgh05_notejam-mysql \
                     -Dsonar.java.binaries=build/classes/java/ \
                     -Dsonar.python.version=3 \
                     -Dsonar.sourceEncoding=UTF-8
