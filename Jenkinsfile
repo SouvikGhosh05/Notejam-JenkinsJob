@@ -17,11 +17,13 @@ pipeline {
                     sh '''
                     ${scannerHome}/bin/sonar-scanner \
                     -Dsonar.host.url=https://sonarcloud.io/ \
+                    -Dsonar.login=79254cacf41caea6ecf49aef546bab383e16d9e8 \
                     -Dsonar.organization=souvikgh05 \
                     -Dsonar.projectKey=souvikgh05_notejam-mysql \
                     -Dsonar.java.binaries=build/classes/java/ \
                     -Dsonar.python.version=3 \
-                    -Dsonar.sourceEncoding=UTF-8
+                    -Dsonar.sourceEncoding=UTF-8 \
+                    -Dsonar.verbose=true
                     '''
                 }
             }
