@@ -16,6 +16,7 @@ pipeline {
                 withSonarQubeEnv('SonarQubeScanner-4.7.0') {
                     sh '''
                     ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.host.url=https://sonarcloud.io/ \
                     -Dsonar.organization=souvikgh05 \
                     -Dsonar.projectKey=souvikgh05_notejam-mysql \
                     -Dsonar.java.binaries=build/classes/java/ \
